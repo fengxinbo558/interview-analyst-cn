@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "skill": "interview-analyst-cn",
+  "runs_per_query": 3,
+  "trigger_threshold": 0.5,
+  "queries": [
+    {
+      "q": "先审计这批深访逐字稿是否完整、能否稳定定位，再决定能做什么分析",
+      "expect": "trigger",
+      "split": "train"
+    },
+    {
+      "q": "快速分析这一份离职访谈逐字稿，给我个案时间线、矛盾和待追问点",
+      "expect": "trigger",
+      "split": "train"
+    },
+    {
+      "q": "对这 12 份用户深度访谈逐字稿做开放编码、负例检验和跨案例解释",
+      "expect": "trigger",
+      "split": "validation"
+    },
+    {
+      "q": "报告要引用员工访谈原话，请逐条回到时间戳核对并降低再识别风险",
+      "expect": "trigger",
+      "split": "validation"
+    },
+    {
+      "q": "把访谈摘要、客服工单、问卷开放题和销售记录综合成三个机会主题",
+      "expect": "no-trigger",
+      "split": "train",
+      "near_miss_of": "synthesize-research-cn"
+    },
+    {
+      "q": "把今天项目例会的录音转成逐字稿和会议纪要",
+      "expect": "no-trigger",
+      "split": "train",
+      "near_miss_of": "transcription-or-meeting-notes"
+    },
+    {
+      "q": "分析这 600 份员工敬业度问卷，比较部门差异是否显著",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "measure-survey-analysis-cn"
+    },
+    {
+      "q": "还没做访谈，先帮我选择研究方法、规划样本和招募方案",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "product-research-cn"
+    },
+    {
+      "q": "把这通销售电话整理成 CRM 跟进摘要和下一步行动",
+      "expect": "no-trigger",
+      "split": "validation",
+      "near_miss_of": "sales-call-summary"
+    }
+  ]
+}
