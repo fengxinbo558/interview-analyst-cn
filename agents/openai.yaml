@@ -1,0 +1,4 @@
+interface:
+  display_name: "访谈资料分析"
+  short_description: "对原始深访逐字稿做可追溯编码、负例检查和严格引文核验"
+  default_prompt: "请使用 $interview-analyst-cn 分析这些原始访谈逐字稿，并清楚区分事实、推断、反证和未知。"
